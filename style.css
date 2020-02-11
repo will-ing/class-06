@@ -37,7 +37,7 @@ main {
 }
 
 article {
-  display: inline-block;
+  text-align: center;
 }
 
 article.about_us {
@@ -52,7 +52,7 @@ article.location{
   background-color: yellow;
   width: 300px;
   margin-left: 50px;
-  position: absolute;
+  position: ;
 }
 
 article.contact{

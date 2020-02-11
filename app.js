@@ -12,15 +12,15 @@
 
 // needs to calculate the number of cookies each location must make every day
 
-function numberOfCookiesNeeded(arr){ 
+function numberOfCookiesNeeded(arr){ //sums up an array
   var i = 0;
-  var j = 0;
+  var ttl = 0;
   while (i < arr.length){
-    j = j + arr[i];
+    ttl = ttl + arr[i];
     i++;
   }
-  console.log(j);
-  return(j);
+  console.log(ttl);
+  return(ttl);
 }
 
 
@@ -136,6 +136,20 @@ var lima = {
 
 function makeList(list){
   var listElement = document.createElement('ul');
-    
-  });
+  list.append(listElement);
+  };
+
+  var customerCount = function(minCustomers, maxCustomers){
+    this.minCustomers = minCustomers;
+    this.maxCustomers = maxCustomers;
+  }
+
+customerCount.prototype.generateRandom = function(){
+  var cust, viewers;
 }
+
+
+  
+
+  
+
