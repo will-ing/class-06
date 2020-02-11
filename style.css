@@ -2,3 +2,60 @@
 /* A different background color for elements such boxes and tables (so make sure the font colors contrast against this well, too!) */
 /* Anything else you’d like to add related to style. But remember: simplicity, clarity, and consistency are good things in design. */
 /* like to see these numbers with nice formatting in a web application. */
+
+body {
+  font-family: 'Sriracha', cursive;
+  font-family: 'Fira Sans', sans-serif;
+  /* background-image: repeating-linear-gradient( blue, white, blue); */
+}
+
+header {
+  vertical-align: top;
+  }
+
+#logo {
+  display: inline-block;
+}
+
+#title {
+  display: inline-block;
+  background-color: royalblue;
+  width: 500px;
+  text-align: center;
+  height: 100px;
+}
+
+figure img {
+  width: 250px;
+  display: inline-block;
+  background-color: saddlebrown;
+}
+
+main {
+ margin: 0px;
+ text-align: ;
+}
+
+article {
+  display: inline-block;
+}
+
+article.about_us {
+  background-color: blue;
+}
+
+article.hours {
+  background-color: rebeccapurple;
+}
+
+article.location{
+  background-color: yellow;
+  width: 300px;
+  margin-left: 50px;
+  position: absolute;
+}
+
+article.contact{
+  background-color: green;
+}
+
