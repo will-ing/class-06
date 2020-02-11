@@ -33,7 +33,7 @@ figure img {
 
 main {
  margin: 0px;
- text-align: ;
+ 
 }
 
 article {
@@ -42,20 +42,34 @@ article {
 
 article.about_us {
   background-color: blue;
+  
+}
+
+#mid {
+  padding: 0px;
+  display: flex;
 }
 
 article.hours {
   background-color: rebeccapurple;
+  display: inline-block;
+  width: 30%;
+  margin: 0px auto;
 }
 
 article.location{
   background-color: yellow;
-  width: 300px;
-  margin-left: 50px;
-  position: ;
+  display: inline-block;
+  width: 30%;
+  margin: 0px auto;
+  
 }
 
 article.contact{
   background-color: green;
 }
 
+ul {
+  list-style-type: none;
+  text-align: left;
+}
