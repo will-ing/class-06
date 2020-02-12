@@ -33,27 +33,27 @@ function cookiesPurchased(enterStore){ // enter the store that the const built
   return(enterStore.cookiesPerHour);
 }
 
-var storeArr = [];
+var storeArr = []; // used to store objects in an arr. func ttlByHour needs this to run its loop.
 
-var createStore = function(name, maxCustomers, minCustomers, avgCookies, cookiesSold){
+var createStore = function(name, maxCustomers, minCustomers, avgCookies, cookiesSold){ // constr func to build objects based on imputed properties
   this.name = name;
   this.maxCustomers = maxCustomers;
   this.minCustomers = minCustomers;
   this.avgCookies = avgCookies;
   this.cookiesSold = cookiesSold;
-  storeArr.push(this);
+  storeArr.push(this); // pushes all properties to arr
 
 }
 // creates seattle object
-var seattle = new createStore('seattle', 65, 23, 6.3, []);
+var seattle = new createStore('seattle', 65, 23, 6.3, []);// creates store object and its properties
 var tokyo = new createStore('tokyo', 24, 3, 1.2,[]);
 var dubai = new createStore('dubai', 28, 11, 3.7, []);
 var paris = new createStore('paris', 38, 20, 2.3, []);
 var lima = new createStore('lima', 16, 2, 4.6, []);
 
 function createHead(){ //creates head of table
-  var table = document.getElementById('tableOne')
-  var rowOne = document.createElement('tr');
+  var table = document.getElementById('tableOne') // finds id to reference
+  var rowOne = document.createElement('tr'); 
   table.appendChild(rowOne); // this makes the rows
   var head = document.createElement('th');
   head.textContent = 'Store Name'; // identify what goes in the head
@@ -86,35 +86,42 @@ function rowRow(allTheCookies){// creates rows based on store entered
 // pushes total of cookies sold to the end of the arr.
 function totalByStore(stor){
   stor.cookiesSold.push(numberOfCookiesNeeded(stor.cookiesSold));
+  
 }
 
 function ttlByHour(){
   var table = document.getElementById('tableOne') // select table one
   var rowOne = document.createElement('tr'); // create table row as rowOne
   table.appendChild(rowOne); // row is appended
-  var rows = document.createElement('td'); // creates an element for table column
-  rows.textContent = 'Hour Totals'; // assigns it ttl
-  rowOne.appendChild(rows); // adds values of ttl to HTML table
+  var rows = document.createElement('td'); // creates an element for table data
+  rows.textContent = 'Hour Totals'; // assigns first row "hour ttls"
+  rowOne.appendChild(rows); // add 'rows' content to first <td> in row
   for ( w = 0; w < hours.length; w++) {// loops through hours arr for ttl hrs
-    var ttl = 0 // ttl holds sum by hour
-    for (q = 0; q < storeArr.length; q++){
-      ttl = ttl + storeArr[q].cookiesSold[w]; // grabs first index for storeArr and cookiesSold to add in to ttl.
+    var ttl = 0 // ttl holds sum by hour and then assigns it to hour the loop is on
+    for (q = 0; q < storeArr.length; q++){ // loops through storeArr for stores that are created and creates <td> for the row.
+      ttl = ttl + storeArr[q].cookiesSold[w]; // adds each stores ttl per hour on each hour
     }
-    
     var rows = document.createElement('td'); // creates an element for table column
     rows.textContent = ttl; // assigns it ttl
     rowOne.appendChild(rows); // adds values of ttl to HTML table
   }
 }
 
-
+function overAllTtl(){
+  var ttlCookies = numberOfCookiesNeeded(seattle.cookiesSold) +
+  numberOfCookiesNeeded(tokyo.cookiesSold) +
+  numberOfCookiesNeeded(dubai.cookiesSold) +
+  numberOfCookiesNeeded(paris.cookiesSold) +
+  numberOfCookiesNeeded(lima.cookiesSold);
+ 
+}
 
 
 createHead();
 
-cookiesPurchased(seattle);
-totalByStore(seattle);
-rowRow(seattle);
+cookiesPurchased(seattle); // generates random number of cookies by hour and stores in each object arr
+totalByStore(seattle); // Sums up arr of random cookie sales and adds it ot the end of the arr
+rowRow(seattle); // displays the store argument entered and displays the name of the store followed by the cookies sold by hour
 
 cookiesPurchased(tokyo);
 totalByStore(tokyo);
@@ -134,6 +141,7 @@ rowRow(lima);
 
 ttlByHour();
 
+// overAllTtl();
 
 
 

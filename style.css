@@ -9,21 +9,35 @@ body {
   /* background-image: repeating-linear-gradient( blue, white, blue); */
 }
 
+body {
+  background-color: grey;
+  margin: 0%;
+}
+
+
 header {
-  vertical-align: top;
+  vertical-align: center;
+  display: flex;
+  width: 100%;
   }
 
 #logo {
   display: inline-block;
+  margin: 0%;
 }
 
 #title {
   display: inline-block;
-  background-color: royalblue;
-  width: 500px;
+  background-image: repeating-linear-gradient(to right, black, rgb(4, 110, 70), rgb(70, 70, 70));
+  width: 90%;
   text-align: center;
-  height: 100px;
+  height: 90px;
+  margin: 0%;
+  color: azure;
+  font-size: 70px;
+
 }
+
 
 figure img {
   width: 250px;
@@ -38,11 +52,14 @@ main {
 
 article {
   text-align: center;
+  font-size: 25px;
 }
 
 article.about_us {
-  background-color: blue;
-  
+  background-color: darkolivegreen;
+  color: aliceblue;
+  width: 70%;
+  margin: 0px auto;
 }
 
 #mid {
@@ -51,14 +68,16 @@ article.about_us {
 }
 
 article.hours {
-  background-color: rebeccapurple;
-  display: inline-block;
-  width: 30%;
+  background-image: repeating-linear-gradient(to bottom right, black, darkblue, rgb(70, 70, 70));
+  color: white;
+  display: inline-flexbox;
+  width: 40%;
   margin: 0px auto;
 }
 
 article.location{
-  background-color: yellow;
+  background-image: repeating-linear-gradient(to bottom left,  rgb(125, 126, 65), rgb(35, 83, 12), rgb(125, 126, 65));
+  color: aliceblue;
   display: inline-block;
   width: 30%;
   margin: 0px auto;
@@ -66,7 +85,7 @@ article.location{
 }
 
 article.contact{
-  background-color: green;
+  background-color: rgba(212, 177, 60, 0.808);
 }
 
 ul {
@@ -74,3 +93,23 @@ ul {
   text-align: left;
 }
 
+ul.days {
+  display: inline-block;
+}
+
+ul.time {
+  display: inline-block;
+}
+
+#salesHeader {
+  font-size: 50px;
+}
+
+
+table {
+  background-image: repeating-linear-gradient(to bottom right, black, darkblue, rgb(70, 70, 70));
+  color: aliceblue;
+  padding: 0px, auto;
+  display: inline-block;
+  border: 3px azure;
+}
