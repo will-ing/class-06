@@ -45,7 +45,7 @@ function createHead(){ //creates head of table
   var head = document.createElement('th');
   head.textContent = 'Store Name'; // identify what goes in the head
   rowOne.appendChild(head); 
-    for (j = 0; j < hours.length; j++){ //this will make the head with the values of the hours arr
+    for (var j = 0; j < hours.length; j++){ //this will make the head with the values of the hours arr
       var head = document.createElement('th');
       head.textContent = hours[j]; // identify what goes in the head
       rowOne.appendChild(head); // adds it to the head
@@ -78,7 +78,7 @@ function rowRow(allTheCookies){// creates rows based on stores entered
   var rows = document.createElement('td'); // creates an element for table data
   rows.textContent = allTheCookies.name; // assigns first row "hour ttls"
   rowOne.appendChild(rows); // add 'rows' content to first <td> in row
-  for (k = 0; k < allTheCookies.cookiesSold.length; k++){ 
+  for (var k = 0; k < allTheCookies.cookiesSold.length; k++){ 
     var rows = document.createElement('td');
     rows.textContent = allTheCookies.cookiesSold[k]; 
     rowOne.appendChild(rows); 
@@ -92,9 +92,9 @@ function ttlByHour(){
   var rows = document.createElement('td'); // creates an element for table data
   rows.textContent = 'Hour Totals'; // assigns first row "hour ttls"
   rowOne.appendChild(rows); // add 'rows' content to first <td> in row
-  for ( w = 0; w < hours.length; w++) {// loops through hours arr for ttl hrs
+  for (var w = 0; w < hours.length; w++) {// loops through hours arr for ttl hrs
     var ttl = 0 // ttl holds sum by hour and then assigns it to hour the loop is on
-    for (q = 0; q < storeArr.length; q++){ // loops through storeArr for stores that are created and creates <td> for the row.
+    for (var q = 0; q < storeArr.length; q++){ // loops through storeArr for stores that are created and creates <td> for the row.
       ttl = ttl + storeArr[q].cookiesSold[w]; // adds stores combined ttl per hour on each hour
     }
     var rows = document.createElement('td'); // creates an element for table column
@@ -116,7 +116,7 @@ function overAllTtl(){ // needs to get total for all hours and stores; prototype
 
 function dry(arr) {
   console.log(arr);
-  for (t = 0; t < arr.length; t++){
+  for (var t = 0; t < arr.length; t++){
     cookiesPurchased(arr[t]); // generates random number of cookies by hour and stores in each object arr
     totalByStore(arr[t]); // Sums up arr of random cookie sales and adds it ot the end of the arr
     rowRow(arr[t]) // displays the store argument entered and displays the name of the store followed by the cookies sold by hour
@@ -132,5 +132,5 @@ ttlByHour(); // Last row  on table with hourly ttl
 // overAllTtl();
 
 
-
-
+// calculate how many Salmon Cookie Tossers are needed at each location each hour.
+// Salmon Cookie Tosser can serve 20 customers per hour
