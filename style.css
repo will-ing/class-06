@@ -52,7 +52,7 @@ main {
 
 article {
   text-align: center;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 article.about_us {
@@ -70,17 +70,17 @@ article.about_us {
 article.hours {
   background-image: repeating-linear-gradient(to bottom right, black, darkblue, rgb(70, 70, 70));
   color: white;
-  display: inline-flexbox;
-  width: 40%;
-  margin: 0px auto;
+  display: inline-block;
+  width: 20%;
+  margin: 0px 0px 0px 5%;
 }
 
 article.location{
-  background-image: repeating-linear-gradient(to bottom left,  rgb(125, 126, 65), rgb(35, 83, 12), rgb(125, 126, 65));
+  background-image: repeating-radial-gradient(green, darkolivegreen);
   color: aliceblue;
   display: inline-block;
-  width: 30%;
-  margin: 0px auto;
+  width: 10%;
+  margin: 0px 0px 0px 0px;
   
 }
 
