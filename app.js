@@ -41,8 +41,7 @@ var createStore = function(name, maxCustomers, minCustomers, avgCookies, cookies
   this.minCustomers = minCustomers;
   this.avgCookies = avgCookies;
   this.cookiesSold = cookiesSold;
-  storeArr.push(name)
-  
+  storeArr.push(this);
 
 }
 // creates seattle object
@@ -93,16 +92,23 @@ function ttlByHour(){
   var table = document.getElementById('tableOne') // select table one
   var rowOne = document.createElement('tr'); // create table row as rowOne
   table.appendChild(rowOne); // row is appended
-  var ttl = 0 // ttl holds sum by hour
-  for ( w = 0; w < hours.length; w++) // loops through hours arr for ttl hrs
+  var rows = document.createElement('td'); // creates an element for table column
+  rows.textContent = 'Hour Totals'; // assigns it ttl
+  rowOne.appendChild(rows); // adds values of ttl to HTML table
+  for ( w = 0; w < hours.length; w++) {// loops through hours arr for ttl hrs
+    var ttl = 0 // ttl holds sum by hour
     for (q = 0; q < storeArr.length; q++){
-      var ttl = ttl + storeArr[w].cookiesSold[w]; // grabs first index for storeArr and cookiesSold to add in to ttl.
+      ttl = ttl + storeArr[q].cookiesSold[w]; // grabs first index for storeArr and cookiesSold to add in to ttl.
     }
     
     var rows = document.createElement('td'); // creates an element for table column
     rows.textContent = ttl; // assigns it ttl
     rowOne.appendChild(rows); // adds values of ttl to HTML table
+  }
 }
+
+
+
 
 createHead();
 
