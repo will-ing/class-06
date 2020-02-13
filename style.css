@@ -151,3 +151,21 @@ table {
   display: inline-block;
   border: 3px azure;
 }
+
+
+/* Create a new HTML form to accept the information for a new cookie stand. Be sure to utulize the <fieldset> tag to help you style it. */
+
+fieldset {
+ 
+  width: 400px;
+  height: 140px;
+}
+
+fieldset label {
+  display: inline-block;
+}
+
+button {
+  width: 80px;
+  height:30px;
+}

@@ -78,7 +78,7 @@ createStore.prototype.cookiesPurchased = function(){
   }
   return(this.cookiesUPH);
 }
-  
+
 // pushes total of cookies sold per store to the end of the arr.
 function totalByStore(stor){
   stor.cookiesSold.push(numberOfCookiesNeeded(stor.cookiesSold));
@@ -141,21 +141,24 @@ dry(storeArr); // runs 3 func in to loop for rows
 
 ttlByHour(); // Last row  on table with hourly ttl
 
-// overAllTtl();
 
+// Create a new HTML form to accept the information for a new cookie stand. 
 
-// calculate how many Salmon Cookie Tossers are needed at each location each hour.
-// Salmon Cookie Tosser can serve 20 customers per hour
-// createStore.prototype.cookiesTosser = function(){
-//   var i = 0;
-//   while(i < hours.length){
-//     var result = this.cookiesSold.slice(0, 15)) / 20;
-//     i++
-//   }
-//   console.log(this.cookiesSold.slice(0, 15));
-//   console.log(result);
-  
-//   return(result);
-   
-// }
-// seattle.cookiesTosser();
+function enterStore(event){
+  event.preventDefault();
+
+  var name = event.target.store.value; // this is targeting the value of the input
+  var maxCust = event.target.max.value;
+  var minCust = event.target.min.value;
+  var avgCookies = event.target.avgSold.value;
+  var newStore = new createStore(name, maxCust, minCust, avgCookies);
+
+  totalByStore(newStore);
+  console.log('did it work?', storeArr);
+
+}
+
+var bestFormEver = document.getElementById('nameForm');
+
+bestFormEver.addEventListener('submit', enterStore)
+
