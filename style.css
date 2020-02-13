@@ -112,6 +112,9 @@ article figure {
   margin-top: 0px;
 }
 
+button:hover {
+  background-color: wheat;
+}
 
 .shirt {
   display: inline-block;
