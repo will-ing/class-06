@@ -58,26 +58,26 @@ function createHead(){ //creates head of table
 }
 
 createStore.prototype.custGenerator = function (){
-  i = 0;
-  while (i < hours.length){
-    var custPerHour = Math.floor((Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers));
-    this.customerPerHour.push(custPerHour);
-    i++;
-  }
-  // console.log(this.customerPerHour)
+  var custPerHour = Math.floor((Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers));
+  this.customerPerHour.push(custPerHour);  
+  // console.log(custPerHour)
   return(this.customerPerHour)
-
 }
+
+
 
 createStore.prototype.cookiesPurchased = function(){
   var i  =  0;
   while (i < hours.length){
-    var cookiesUPH = this.custGenerator()[i] * Math.floor(this.avgCookies);
-    this.cookiesSold.push(cookiesUPH);
+    var cookiesUPH = this.custGenerator()[i] * this.avgCookies;
+    this.cookiesSold.push(Math.floor(cookiesUPH));
     i++ //increments var to loop through hour arr
   }
+  // console.log(this.cookiesSold)
   return(this.cookiesUPH);
 }
+
+
 
 // pushes total of cookies sold per store to the end of the arr.
 function totalByStore(stor){
@@ -153,6 +153,7 @@ function enterStore(event){
   var avgCookies = event.target.avgSold.value;
   var newStore = new createStore(name, maxCust, minCust, avgCookies);
 
+  newStore.cookiesPurchased();
   totalByStore(newStore);
   console.log('did it work?', storeArr);
 
