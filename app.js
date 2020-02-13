@@ -30,6 +30,7 @@ var createStore = function(name, maxCustomers, minCustomers, avgCookies){ // con
   this.minCustomers = minCustomers;
   this.avgCookies = avgCookies;
   this.cookiesSold = [];
+  this.customerPerHour = [];
   storeArr.push(this); // pushes all properties to arr
 
 }
@@ -56,18 +57,28 @@ function createHead(){ //creates head of table
     rowOne.appendChild(head); 
 }
 
-// generates cookies purchased by hour
-function cookiesPurchased(enterStore){ // enter the store that the const built
-  var cookiesUPH = 0 // starts the loop
-  while (cookiesUPH < hours.length) { // when cookiesUPH is less than hours arr run loop
-    var cookiesPerHour = Math.floor((Math.random() * (enterStore.maxCustomers - enterStore.minCustomers) + enterStore.minCustomers)) * Math.floor(enterStore.avgCookies); // creates random cookies per hour var that multiplies random number and avgCookies
-    // hours[cookiesUPH] += ' ' + cookiesPerHour; // creates concatenation for hours arr & cookiesPerHour var // <--Delete -->
-    enterStore.cookiesSold.push(cookiesPerHour); // pushes random number to arr in each store object
-    cookiesUPH++ //increments var to loop through hour arr
+createStore.prototype.custGenerator = function (){
+  i = 0;
+  while (i < hours.length){
+    var custPerHour = Math.floor((Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers));
+    this.customerPerHour.push(custPerHour);
+    i++;
   }
-  return(enterStore.cookiesPerHour);
+  // console.log(this.customerPerHour)
+  return(this.customerPerHour)
+
 }
 
+createStore.prototype.cookiesPurchased = function(){
+  var i  =  0;
+  while (i < hours.length){
+    var cookiesUPH = this.custGenerator()[i] * Math.floor(this.avgCookies);
+    this.cookiesSold.push(cookiesUPH);
+    i++ //increments var to loop through hour arr
+  }
+  return(this.cookiesUPH);
+}
+  
 // pushes total of cookies sold per store to the end of the arr.
 function totalByStore(stor){
   stor.cookiesSold.push(numberOfCookiesNeeded(stor.cookiesSold));
@@ -118,7 +129,7 @@ function overAllTtl(){ // needs to get total for all hours and stores; prototype
 
 function dry(arr) {
   for (var t = 0; t < arr.length; t++){
-    cookiesPurchased(arr[t]); // generates random number of cookies by hour and stores in each object arr
+    arr[t].cookiesPurchased(); // generates random number of cookies by hour and stores in each object arr
     totalByStore(arr[t]); // Sums up arr of random cookie sales and adds it ot the end of the arr
     rowRow(arr[t]) // displays the store argument entered and displays the name of the store followed by the cookies sold by hour
   }
@@ -135,16 +146,16 @@ ttlByHour(); // Last row  on table with hourly ttl
 
 // calculate how many Salmon Cookie Tossers are needed at each location each hour.
 // Salmon Cookie Tosser can serve 20 customers per hour
-createStore.prototype.cookiesTosser = function(){
-  var i = 0;
-  while(i < hours.length){
-    var result = this.cookiesSold.slice(0, 15)) / 20;
-    i++
-  }
-  console.log(this.cookiesSold.slice(0, 15));
-  console.log(result);
+// createStore.prototype.cookiesTosser = function(){
+//   var i = 0;
+//   while(i < hours.length){
+//     var result = this.cookiesSold.slice(0, 15)) / 20;
+//     i++
+//   }
+//   console.log(this.cookiesSold.slice(0, 15));
+//   console.log(result);
   
-  return(result);
+//   return(result);
    
-}
-seattle.cookiesTosser();
+// }
+// seattle.cookiesTosser();
