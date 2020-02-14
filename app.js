@@ -64,8 +64,6 @@ createStore.prototype.custGenerator = function (){
   return(this.customerPerHour)
 }
 
-
-
 createStore.prototype.cookiesPurchased = function(){
   var i  =  0;
   while (i < hours.length){
@@ -78,11 +76,12 @@ createStore.prototype.cookiesPurchased = function(){
 }
 
 
-
 // pushes total of cookies sold per store to the end of the arr.
 function totalByStore(stor){
   stor.cookiesSold.push(numberOfCookiesNeeded(stor.cookiesSold));
 }
+
+
 function rowRow(allTheCookies){// creates rows based on stores entered
   var rowOne = document.createElement('tr'); // create table row as rowOne
   table.appendChild(rowOne); // row is appended
@@ -148,13 +147,15 @@ function enterStore(event){
   event.preventDefault();
 
   var name = event.target.store.value; // this is targeting the value of the input
-  var maxCust = event.target.max.value;
-  var minCust = event.target.min.value;
-  var avgCookies = event.target.avgSold.value;
+  var maxCust = parseInt(event.target.max.value);
+  var minCust = parseInt(event.target.min.value);
+  var avgCookies = parseInt(event.target.avgSold.value);
   var newStore = new createStore(name, maxCust, minCust, avgCookies);
 
   newStore.cookiesPurchased();
   totalByStore(newStore);
+  rowRow(newStore);
+
   console.log('did it work?', storeArr);
 
 }
