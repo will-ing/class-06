@@ -96,8 +96,9 @@ function rowRow(allTheCookies){// creates rows based on stores entered
 }
 
 function ttlByHour(){
+  var tableTwo = document.getElementById('tableTwo')
   var rowOne = document.createElement('tr'); // create table row as rowOne
-  table.appendChild(rowOne); // row is appended
+  tableTwo.appendChild(rowOne); // row is appended
   var rows = document.createElement('td'); // creates an element for table data
   rows.textContent = 'Hour Totals'; // assigns first row "hour ttls"
   rowOne.appendChild(rows); // add 'rows' content to first <td> in row
@@ -138,7 +139,7 @@ createHead(); // func makes header of table
 
 dry(storeArr); // runs 3 func in to loop for rows
 
-ttlByHour(); // Last row  on table with hourly ttl
+
 
 
 // Create a new HTML form to accept the information for a new cookie stand. 
@@ -155,7 +156,7 @@ function enterStore(event){
   newStore.cookiesPurchased();
   totalByStore(newStore);
   rowRow(newStore);
-
+  
   console.log('did it work?', storeArr);
 
 }
@@ -164,3 +165,4 @@ var bestFormEver = document.getElementById('nameForm');
 
 bestFormEver.addEventListener('submit', enterStore)
 
+ttlByHour(); // Last row  on table with hourly ttl

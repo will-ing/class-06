@@ -147,9 +147,21 @@ ul.time {
 table {
   background-image: repeating-linear-gradient(to bottom right, black, darkblue, rgb(70, 70, 70));
   color: aliceblue;
-  padding: 0px, auto;
+  padding: 0px 5px;
   display: inline-block;
   border: 3px azure;
+  height: auto;
+  line-height: 25px;
+  
+}
+
+
+
+#tableTwo td {
+  margin-right: 50px;
+  table-layout: fixed;
+  width: ;
+
 }
 
 
