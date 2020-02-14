@@ -158,7 +158,6 @@ function enterStore(event){
   rowRow(newStore);
   
   console.log('did it work?', storeArr);
-
 }
 
 var bestFormEver = document.getElementById('nameForm');
