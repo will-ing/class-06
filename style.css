@@ -1,3 +1,183 @@
 /* background color for the default page background (make sure font colors have good contrast and are readable on this background) */
 /* A different background color for elements such boxes and tables (so make sure the font colors contrast against this well, too!) */
 /* Anything else you’d like to add related to style. But remember: simplicity, clarity, and consistency are good things in design. */
+/* like to see these numbers with nice formatting in a web application. */
+
+body {
+  font-family: 'Sriracha', cursive;
+  font-family: 'Fira Sans', sans-serif;
+  /* background-image: repeating-linear-gradient( blue, white, blue); */
+}
+
+body {
+  background-color: grey;
+  margin: 0%;
+}
+
+
+header {
+  vertical-align: center;
+  display: flex;
+  width: 100%;
+  }
+
+#logo {
+  display: block;
+  margin: 0%;  
+}
+
+main img:first-of-type {
+  width: 100%;
+}
+
+header img {
+  height: 100%;
+}
+
+#title {
+  display: inline-block;
+  background-image: repeating-linear-gradient(to right, black, rgb(4, 110, 70), rgb(70, 70, 70));
+  width: 90%;
+  text-align: center;
+  height: 90px;
+  margin: 0%;
+  color: azure;
+  font-size: 70px;
+  min-width: 550px;
+
+}
+
+
+figure img {
+  width: 250px;
+  display: inline-block;
+  background-color: saddlebrown;
+}
+
+main {
+ margin: 0px;
+ 
+}
+
+article {
+  text-align: center;
+  font-size: 18px;
+}
+
+article.about_us {
+  background-color: darkolivegreen;
+  color: aliceblue;
+  width: 70%;
+  margin: 0px auto;
+}
+
+#mid {
+  padding: 0px;
+  display: flex;
+  height: 400px;
+}
+
+article.hours {
+  background-image: linear-gradient(to right, black, darkblue);
+  color: white;
+  display: inline-block;
+  width: 30%;
+  margin: 0px 0px 0px 5%;
+  height: 300px;
+  
+}
+
+article.location{
+  background-image: linear-gradient(to right,darkblue, black);
+  color: aliceblue;
+  display: inline-block;
+  width: 200px;
+  margin: 0px 0px 9% 0px;
+  align-content: center;
+  
+  
+}
+
+.cutter {
+  display: flex;
+  width: 50%;
+  margin-top: 0px;
+  height: 100%;
+  overflow: hidden;
+  }
+
+article figure {
+  display: inline-block;
+  width: 45%;
+  margin-top: 0px;
+}
+
+button:hover {
+  background-color: wheat;
+}
+
+.shirt {
+  display: inline-block;
+  
+}
+
+article.contact{
+  background-color: rgba(212, 177, 60, 0.808);
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+ul.days {
+  display: inline-block;
+  width: 30%;
+}
+
+ul.time {
+  display: inline-block;
+}
+
+#salesHeader {
+  font-size: 50px;
+}
+
+
+table {
+  background-image: repeating-linear-gradient(to bottom right, black, darkblue, rgb(70, 70, 70));
+  color: aliceblue;
+  padding: 0px 5px;
+  display: inline-block;
+  border: 3px azure;
+  height: auto;
+  line-height: 25px;
+  
+}
+
+
+
+#tableTwo td {
+  margin-right: 50px;
+  table-layout: fixed;
+  width: ;
+
+}
+
+
+/* Create a new HTML form to accept the information for a new cookie stand. Be sure to utulize the <fieldset> tag to help you style it. */
+
+fieldset {
+ 
+  width: 400px;
+  height: 140px;
+}
+
+fieldset label {
+  display: inline-block;
+}
+
+button {
+  width: 80px;
+  height:30px;
+}
